@@ -1,0 +1,172 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Süeda Tuğrul";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/@(nameof(portfolyo)).styles.css" />
+
+<div class="text-center">
+    <h1 class="display-3" style="color:darkseagreen">MERHABAA BEN SÜEDA</h1>
+    <p >Kodlamak güzeldir. <a href="https://docs.microsoft.com/aspnet/core">building Web app WİTH ME</a>.</p>
+</div>
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="latifesüedatuğrul, Süeda Tuğrul, TUĞRUL, SÜEDA, LATİFE">
+    <meta name="author" content="Latife Süeda Tuğrul">
+    <title>@ViewData["Title"] - kişisel websitesi</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/portfolyo.styles.css" asp-append-version="true" />
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+        
+        p {
+            font-size: 16px;
+            color:black;
+        }
+        
+        .margin {
+            margin-bottom: 45px;
+        }
+        
+        .bg-1 {
+            background-color: #2dde98;
+            /* Green */
+            color: #333333;
+            /* black */
+        }
+        
+        .bg-2 {
+            background-color: #474e5d;
+            /* Dark Blue */
+            color: #ffffff;
+        }
+        
+        .bg-3 {
+            background-color: #ffffff;
+            /* White */
+            color: #555555;
+        }
+        
+        .bg-4 {
+            background-color: #4C3173;
+            /* Blue Diamond */
+            color: #fff;
+        }
+        
+        .bg-5 {
+            background-color: #ecebe8;
+            /* Gray */
+            color: #333;
+        }
+        
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+        
+        .navbar-nav li a:hover {
+            color: #4C3173 !important;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            
+           
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Latife Süeda Tuğrul</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#kimdir">Kimdir?</a></li>
+                    <li><a href="#neyapar">Ne yapar?</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#iletisim">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- First Container -->
+    <div id="kimdir" class="container-fluid bg-1 text-center">
+        <h3 class="margin">Merhaba, Ben Süeda!</h3>
+        <img src="img/gokhans.jpg" class="img-responsive img-circle margin" style="display:inline" alt="lsüedatuğrul" width="350" height="350">
+        <h3>Bilgisayar Mühendisi</h3>
+    </div>
+
+    <!-- Second Container -->
+    <div id="neyapar" class="container-fluid bg-2 text-center">
+        <h3 class="margin">Neler Yaparım?</h3>
+        <p>Genellikle yazılım geliştiririm. Bol bol sanatla ilgilenir, yeni yerler ve insanlar keşfederim. </p>
+        <a href="#" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-link"></span> Siteye Git
+        </a>
+    </div>
+
+    <!-- Third Container (Grid) -->
+    <div id="blog" class="container-fluid bg-3 text-center">
+        <a class="margin btn btn-default btn-lg" asp-area="" asp-page="/Yayınlar/Index">Yayınlara git>
+            <span class="glyphicon glyphicon-link"></span> BLOG
+        </a>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p>Git, yazılım geliştirme süreçlerinde kullanılan, hız odaklı, dağıtık çalışan bir sürüm kontrol ve kaynak kod yönetim sistemidir.</p>
+                <img src="img/blog-img/git.jpg" class="img-responsive margin" style="width:100%" alt="git">
+            </div>
+            <div class="col-sm-4">
+                <p>HTML, Hiper Metin İşaretleme Dili (Hypertext Markup Language) web sayfalarını oluşturmak için kullanılan metin işleme dilidir.</p>
+                <img src="img/blog-img/html5.jpg" class="img-responsive margin" style="width:100%" alt="html">
+            </div>
+            <div class="col-sm-4">
+                <p>Python bir programlama dilidir. Diğer programlama dillerinde olduğu gibi bilgisayarlara hükmetmeyi sağlar. </p>
+                <img src="img/blog-img/python.jpg" class="img-responsive margin" style="width:100%" alt="python">
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+  
+    
+</body>
+
+
+
