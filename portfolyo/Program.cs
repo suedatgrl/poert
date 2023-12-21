@@ -6,11 +6,15 @@ using portfolyo.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DbContextConnection") ?? throw new InvalidOperationException("Connection string 'DbContextConnection' not found.");
 
-builder.Services.AddDbContext<Microsoft.EntityFrameworkCore.DbContext>(options =>
-    options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<MyDbContext>(options =>
+    options.UseSqlServer(connectionString, b => b.MigrationsAssembly("portfolyo")));
 
-//builder.Services.AddDefaultIdentity<portfolyoUser>(options => 
-//    options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<Microsoft.EntityFrameworkCore.DbContext>();
+
+
+
+builder.Services.AddDefaultIdentity<portfolyoUser>(options =>
+    options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<MyDbContext>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();

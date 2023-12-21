@@ -132,6 +132,15 @@ namespace portfolyo.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
+                    //new
+                    // Gönderi ekleme
+                    var post = new Post { Content = "Default post content" };
+                    user.Posts = new List<Post> { post };
+                    // Veritabanına kaydet
+                    await _userManager.CreateAsync(user, Input.Password);
+                    //Özellikle RegisterModel sınıfındaki OnPostAsync metodunda yapılan işlemlerle
+                    //birlikte, kullanıcı kaydı işlemi gerçekleştirildiğinde aynı zamanda
+                    //o kullanıcıya ait bir gönderi de oluşturulur ve veritabanına eklenir.
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
